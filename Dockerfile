@@ -17,10 +17,10 @@ WORKDIR /var/www/html
 COPY /app /var/www/html
 
 # Set permissions (optional but recommended)
-RUN chown -R www-data:www-data /var/www/html
-RUN chmod 666 /var/www/html/hesk_settings.inc.php
-RUN chmod 777 -R /var/www/html/attachments
-RUN chmod 777 -R /var/www/html/cache
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod 666 /var/www/html/hesk_settings.inc.php && \
+    chmod 777 -R /var/www/html/attachments && \
+    chmod 777 -R /var/www/html/cache
 
 # Expose port 9987 for internal use
 EXPOSE 9987
