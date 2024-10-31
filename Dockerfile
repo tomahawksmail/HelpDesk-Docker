@@ -23,7 +23,7 @@ RUN chown -R www-data:www-data /var/www/html && \
     chmod 777 -R /var/www/html/cache
 
 # Expose port 9987 for internal use
-EXPOSE 9987
+EXPOSE 9987 80
 
 # Start PHP-FPM
 CMD ["php-fpm"]
