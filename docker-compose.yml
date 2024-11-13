@@ -14,20 +14,15 @@ services:
         condition: on-failure
     volumes:
       - app-storage:/var/www/html  # Single volume for all necessary folders
-    environment:
-      - DB_HOST=192.168.24.100
-      - DB_NAME=Helpdesk
-      - DB_USER=HDuser
-      - DB_PASSWORD=S6lOlAw6bu
+    env_file:
+      - .env
     networks:
       - helpdesk-network
     ports:
       - "8089:80"  # Port for accessing the PHP application
-
 networks:
   app-network:
     driver: overlay
-
 volumes:
   app-storage:
     driver: local
