@@ -19,7 +19,10 @@ services:
     networks:
       - helpdesk-network
     ports:
-      - "8089:80"  # Port for accessing the PHP application
+      - target: 9000
+        published: 8086
+        protocol: tcp
+        mode: ingress
 networks:
   helpdesk-network:
     driver: overlay
