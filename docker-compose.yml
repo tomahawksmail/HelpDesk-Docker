@@ -21,7 +21,7 @@ services:
     ports:
       - "8089:80"  # Port for accessing the PHP application
 networks:
-  app-network:
+  helpdesk-network:
     driver: overlay
 volumes:
   app-storage:

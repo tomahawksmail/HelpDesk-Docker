@@ -1,0 +1,2 @@
+docker build -t helpdesk-image .
+docker stack deploy -c docker-compose.yml helpdesk_stack
