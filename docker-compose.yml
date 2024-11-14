@@ -23,10 +23,10 @@ services:
         published: 5544
         protocol: tcp
         mode: ingress
-networks:
-  helpdesk-network:
-    external: true
-    driver: overlay
+#networks:
+#  helpdesk-network:
+#    external: true
+#    driver: overlay
 volumes:
   app-storage:
     driver: local
