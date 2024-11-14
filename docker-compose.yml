@@ -16,8 +16,8 @@ services:
       - app-storage:/var/www/html  # Single volume for all necessary folders
     env_file:
       - .env
-    networks:
-      - helpdesk-network
+#    networks:
+#      - helpdesk-network
     ports:
       - target: 80
         published: 5544
