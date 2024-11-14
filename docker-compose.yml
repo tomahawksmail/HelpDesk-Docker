@@ -19,12 +19,13 @@ services:
     networks:
       - helpdesk-network
     ports:
-      - target: 9000
-        published: 8086
+      - target: 80
+        published: 9000
         protocol: tcp
         mode: ingress
 networks:
   helpdesk-network:
+    external: true
     driver: overlay
 volumes:
   app-storage:
