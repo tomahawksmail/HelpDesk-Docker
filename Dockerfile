@@ -9,4 +9,4 @@ WORKDIR /var/www/html
 COPY /app .
 
 # Expose ports: PHP-FPM and web ports
-EXPOSE 9000 80 443
+EXPOSE 9000 80 3306

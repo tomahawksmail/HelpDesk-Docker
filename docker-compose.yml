@@ -16,17 +16,17 @@ services:
       - app-storage:/var/www/html  # Single volume for all necessary folders
     env_file:
       - .env
-#    networks:
-#      - helpdesk-network
+    networks:
+      - helpdesk-network
     ports:
       - target: 80
         published: 5544
         protocol: tcp
         mode: ingress
-#networks:
-#  helpdesk-network:
-#    external: true
-#    driver: overlay
+networks:
+  helpdesk-network:
+    external: true
+    driver: overlay
 volumes:
   app-storage:
     driver: local
