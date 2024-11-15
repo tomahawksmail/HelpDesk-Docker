@@ -1,12 +1,33 @@
-# Use a base PHP image
+## Use a base PHP image
+#FROM php:8.3-fpm
+#
+## Install required PHP extensions
+#RUN docker-php-ext-install mysqli pdo pdo_mysql
+#
+## Set up the working directory and copy application files
+#WORKDIR /var/www/html
+#COPY /app .
+#
+## Expose ports: PHP-FPM and web ports
+#EXPOSE 9000 80 3306
+
+# Use the official PHP 8.3 image with FPM
 FROM php:8.3-fpm
 
-# Install required PHP extensions
+# Install necessary PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Set up the working directory and copy application files
+# Set working directory
 WORKDIR /var/www/html
-COPY /app .
 
-# Expose ports: PHP-FPM and web ports
+# Copy application files to the container
+COPY . .
+
+# Adjust permissions on required folders (assuming `storage` and `cache` are needed)
+RUN chmod -R 777 /var/www/html/storage /var/www/html/cache
+
+# Expose necessary ports
 EXPOSE 9000 80 3306
+
+# Start PHP-FPM
+CMD ["php-fpm"]
