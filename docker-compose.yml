@@ -16,6 +16,8 @@ services:
       - app-storage:/var/www/html  # Single volume for all necessary folders
     env_file:
       - .env
+    expose:
+      - 9000
     networks:
       - helpdesk-network
     ports:
