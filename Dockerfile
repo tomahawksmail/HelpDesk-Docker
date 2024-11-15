@@ -23,8 +23,6 @@ WORKDIR /var/www/html
 # Copy application files to the container
 COPY . .
 
-# Adjust permissions on required folders (assuming `storage` and `cache` are needed)
-RUN chmod -R 777 /var/www/html/storage /var/www/html/cache
 
 # Expose necessary ports
 EXPOSE 9000 80 3306
