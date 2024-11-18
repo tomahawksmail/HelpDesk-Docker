@@ -21,8 +21,8 @@ services:
     networks:
       - helpdesk-network
     ports:
-      - target: 80
-        published: 5544
+      - target: 9000
+        published: 9000
         protocol: tcp
         mode: ingress
 networks:
