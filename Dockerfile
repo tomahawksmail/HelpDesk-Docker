@@ -8,6 +8,6 @@ WORKDIR /var/www/html
 # Copy application files to the container
 COPY test/ .
 # Expose necessary ports
-EXPOSE 9000 80 3306
+EXPOSE 9000
 # Start PHP-FPM
-CMD ["php-fpm"]
+#CMD ["php-fpm"]

@@ -1,4 +1,0 @@
-docker build -t helpdesk-image .
-docker network create --driver overlay helpdesk-network
-docker stack deploy -c docker-compose.yml helpdesk_stack
-

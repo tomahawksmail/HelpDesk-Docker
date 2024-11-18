@@ -1,9 +1,13 @@
-<?php
+<!DOCTYPE>
+  <html>
+  <body>
 
-// Prints e.g. 'Current PHP version: 8.3.12'
-echo 'Current PHP version: ' . phpversion();
+  <?php
+  echo "Hello world using echo </br>";
+  ECHO "Hello world using ECHO </br>";
+  EcHo "Hello world using EcHo </br>";
 
-// Prints e.g. '1.22.3' or nothing if the extension isn't enabled
-echo phpversion('zip');
-
-?>
+  echo 'Current PHP version: ' . phpversion();
+  ?>
+  </body>
+  </html>
