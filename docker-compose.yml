@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   helpdesk:
-    image: dregistrygui.uskoinc.com/helpdesk-image:3.5.0
+    image: dregistrygui.uskoinc.com/helpdesk-image:3.5.1
     build:
       context: .
     deploy:

@@ -3,10 +3,10 @@
 
 
 
-docker build -t helpdesk-image:3.5.0 .
+docker build -t helpdesk-image:3.5.1 .
 docker network create --driver overlay helpdesk-network
-docker tag helpdesk-image:3.5.0 dregistrygui.uskoinc.com/helpdesk-image:3.5.0
-docker push dregistrygui.uskoinc.com/helpdesk-image:3.5.0
+docker tag helpdesk-image:3.5.1 dregistrygui.uskoinc.com/helpdesk-image:3.5.1
+docker push dregistrygui.uskoinc.com/helpdesk-image:3.5.1
 
 
 
