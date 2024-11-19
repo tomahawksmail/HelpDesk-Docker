@@ -6,7 +6,7 @@ RUN docker-php-ext-enable mysqli
 # Set working directory
 WORKDIR /var/www/html
 # Copy application files to the container
-COPY test/ .
+COPY app/ .
 # Expose necessary ports
 EXPOSE 9000
 # Start PHP-FPM
