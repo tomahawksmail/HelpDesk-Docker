@@ -12,8 +12,8 @@ services:
           memory: 1024M
       restart_policy:
         condition: on-failure
-    volumes:
-      - app-storage:/var/www/html  # Single volume for all necessary folders
+#    volumes:
+#      - app-storage:/var/www/html  # Single volume for all necessary folders
     env_file:
       - .env
     expose:
@@ -29,6 +29,6 @@ networks:
   helpdesk-network:
     external: true
     driver: overlay
-volumes:
-  app-storage:
-    driver: local
+#volumes:
+#  app-storage:
+#    driver: local
