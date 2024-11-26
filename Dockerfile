@@ -14,3 +14,5 @@ COPY app/ .
 EXPOSE 9000
 # Start PHP-FPM
 #CMD ["php-fpm"]
+
+listen = /run/php/php8.3-fpm.sock
