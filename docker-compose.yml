@@ -2,9 +2,9 @@ version: '3.8'
 
 services:
   helpdesk-service:
-    image: dregistrygui.uskoinc.com/brunoah/hesk:latest
+    image: brunoah/hesk:latest
     deploy:
-      replicas: 5
+      replicas: 1
       restart_policy:
         condition: any
       resources:
