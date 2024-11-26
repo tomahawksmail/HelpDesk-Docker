@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   helpdesk:
-    image: dregistrygui.uskoinc.com/helpdesk-image:3.5.1
+    image: dregistrygui.uskoinc.com/brunoah/hesk
     build:
       context: .
     deploy:
@@ -12,8 +12,8 @@ services:
           memory: 1024M
       restart_policy:
         condition: on-failure
-#    volumes:
-#      - app-storage:/var/www/html  # Single volume for all necessary folders
+    volumes:
+      - app-storage:/var/www/html  # Single volume for all necessary folders
     env_file:
       - .env
     expose:
@@ -21,7 +21,7 @@ services:
     networks:
       - helpdesk-network
     ports:
-      - target: 9000
+      - target: 80
         published: 9000
         protocol: tcp
         mode: ingress
@@ -29,6 +29,6 @@ networks:
   helpdesk-network:
     external: true
     driver: overlay
-#volumes:
-#  app-storage:
-#    driver: local
+volumes:
+  app-storage:
+    driver: local
