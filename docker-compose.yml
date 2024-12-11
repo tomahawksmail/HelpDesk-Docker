@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   helpdesk:
-    image: helpdesk:latest # Use the image from your local registry
+    image: helpdesk:3.5.1 # Use the image from your local registry
     deploy:
       replicas: 5 # Number of replicas
       restart_policy:
