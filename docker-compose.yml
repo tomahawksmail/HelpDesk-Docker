@@ -1,31 +1,40 @@
 version: '3.8'
 
 services:
-  helpdesk-service:
-    image: brunoah/hesk:latest
+  php-app:
+    image: dregistrygui.uskoinc.com/brunoah/hesk:latest # Use the image from your local registry
     deploy:
-      replicas: 1
+      replicas: 5 # Number of replicas
       restart_policy:
         condition: any
       resources:
         limits:
           cpus: '0.5'
           memory: 512M
+      placement:
+        constraints:
+          - node.role == worker
     ports:
       - target: 80
         published: 5544
         protocol: tcp
         mode: ingress
     volumes:
-      - app-data:/var/www/html  # Maps the volume to /var/www/html in the container
+      - app-data:/var/www/html
+    environment:
+      - PHP_MEMORY_LIMIT=256M
     networks:
       - helpdesk-network
+
+volumes:
+  app-data:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=192.168.24.193,rw
+      device: ":/mnt/nfs/shared"
 
 networks:
   helpdesk-network:
     external: true
     driver: overlay
-
-volumes:
-  app-data:
-
