@@ -21,19 +21,21 @@ services:
         protocol: tcp
         mode: ingress
     volumes:
-      - nfs:/var/www/html
+#      - nfs:/var/www/html
+      - /mnt/nfs/shared/helpdesk:/var/www/html
     environment:
       - PHP_MEMORY_LIMIT=256M
     networks:
       - helpdesk-network
-volumes:
-  nfs:
-    driver: local
-    driver_opts:
-      type: nfs
-      o: addr=192.168.24.193,rw
-#      device: ":/mnt/nfs/shared/helpdesk"
-      device: ":/srv/nfs/shared/helpdesk"
+#volumes:
+#  nfs:
+
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=192.168.24.193,rw
+##      device: ":/mnt/nfs/shared/helpdesk"
+#      device: ":/srv/nfs/shared/helpdesk"
 networks:
   helpdesk-network:
     external: true
