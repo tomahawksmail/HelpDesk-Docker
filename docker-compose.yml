@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  php-app:
+  helpdesk:
     image: dregistrygui.uskoinc.com/brunoah/hesk:latest # Use the image from your local registry
     deploy:
       replicas: 5 # Number of replicas
@@ -31,7 +31,7 @@ volumes:
     driver_opts:
       type: nfs
       o: addr=192.168.24.193,rw
-      device: ":/mnt/nfs/shared"
+      device: ":/mnt/nfs/shared/helpdesk"
 networks:
   helpdesk-network:
     external: true
