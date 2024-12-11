@@ -31,7 +31,8 @@ volumes:
     driver_opts:
       type: nfs
       o: addr=192.168.24.193,rw
-      device: ":/mnt/nfs/shared/helpdesk"
+#      device: ":/mnt/nfs/shared/helpdesk"
+      device: ":/srv/nfs/shared/helpdesk"
 networks:
   helpdesk-network:
     external: true
