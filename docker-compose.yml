@@ -21,7 +21,7 @@ services:
         protocol: tcp
         mode: ingress
     volumes:
-      - /mnt/nfs/shared/helpdesk:/var/www/html
+      - /mnt/nfs/shared/helpdesk/app:/var/www/html
     environment:
       - PHP_MEMORY_LIMIT=256M
     networks:
