@@ -25,7 +25,6 @@ services:
       - PHP_MEMORY_LIMIT=256M
     networks:
       - helpdesk-network
-
 volumes:
   app-data:
     driver: local
@@ -33,7 +32,6 @@ volumes:
       type: nfs
       o: addr=192.168.24.193,rw
       device: ":/mnt/nfs/shared"
-
 networks:
   helpdesk-network:
     external: true
