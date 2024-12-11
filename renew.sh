@@ -12,4 +12,4 @@ docker service create --name helpdesk-service\
                       dregistrygui.uskoinc.com/helpdesk:3.5.1 || { echo "Service creation failed"; exit 1; }
 
 
- docker stack deploy -c docker-compose.yml helpdesk_stack --with-registry-auth
+docker stack deploy -c docker-compose.yml helpdesk_stack --with-registry-auth
