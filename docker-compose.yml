@@ -4,7 +4,7 @@ services:
   helpdesk:
     image: helpdesk:3.5.1 # Use the image from your local registry
     deploy:
-      replicas: 5 # Number of replicas
+      replicas: 1 # Number of replicas
       restart_policy:
         condition: any
       resources:
