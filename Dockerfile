@@ -14,7 +14,7 @@ RUN apt-get update && \
 COPY --chown=www-data:www-data ./app /srv
 
 # Expose port 9000 for PHP-FPM
-EXPOSE 9000
+EXPOSE 9000 80
 
 # Start PHP-FPM
 CMD ["php-fpm"]
