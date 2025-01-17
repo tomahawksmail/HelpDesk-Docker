@@ -24,6 +24,7 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     ports:
       - "5545:80" # Host port : container port
+      - "9000:9000"
     restart: always
 
 networks:
