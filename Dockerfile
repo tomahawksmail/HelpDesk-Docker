@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy application files
-COPY --chown=www-data:www-data ./app /srv
+COPY --chown=www-data:www-data ./app /var/www/html
 
 # Expose port 9000 for PHP-FPM
 EXPOSE 9000 80
