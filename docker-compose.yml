@@ -1,32 +1,26 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  helpdesk:
-    image: helpdesk:3.5.1 # Use the image from your local registry
+  hesk:
+    image: dregistrygui.uskoinc.com/helpdesk:3.5.1
     deploy:
-      replicas: 1 # Number of replicas
-      restart_policy:
-        condition: any
+      replicas: 5
       resources:
         limits:
-          cpus: '0.5'
-          memory: 512M
-      placement:
-        constraints:
-#          - node.role == worker
-          - node.role == manager
-    ports:
-      - target: 80
-        published: 5544
-        protocol: tcp
-        mode: ingress
-    volumes:
-      - /mnt/nfs/shared/helpdesk/app:/var/www/html
-    environment:
-      - PHP_MEMORY_LIMIT=256M
+          cpus: "0.5"
+          memory: "512M"
     networks:
-      - helpdesk-network
+      - hesk-net
+    volumes:
+      - /mnt/nfs/shared/helpdesk/app:/srv:rw
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
+
 networks:
-  helpdesk-network:
+  hesk-net:
     external: true
-    driver: overlay
