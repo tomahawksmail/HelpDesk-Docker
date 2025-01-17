@@ -1,19 +1,14 @@
-# Use PHP with FPM instead of Apache
-FROM php:7.0-apache
+# Use the official PHP image
+FROM php:8.2-apache
 
+# Install PDO MySQL extension
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Install necessary dependencies and PHP extensions
-RUN apt-get update && \
-    apt-get install -y libc-client-dev libkrb5-dev libssl-dev software-properties-common build-essential && \
-    docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
-    docker-php-ext-install mysqli imap && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Copy application files
+# Set the working directory
 WORKDIR /var/www/html
 
-# Expose port 9000 for PHP-FPM
+
+# Expose port 80
 EXPOSE 80
 
 
