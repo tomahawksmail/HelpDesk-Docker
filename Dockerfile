@@ -1,5 +1,5 @@
 # Use PHP with FPM instead of Apache
-FROM php:8.3-fpm
+FROM php:7.0-apache
 
 
 # Install necessary dependencies and PHP extensions
@@ -14,7 +14,6 @@ RUN apt-get update && \
 WORKDIR /var/www/html
 
 # Expose port 9000 for PHP-FPM
-EXPOSE 9000 80
+EXPOSE 80
 
-# Start PHP-FPM
-CMD ["php-fpm"]
+
