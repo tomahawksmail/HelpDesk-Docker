@@ -23,7 +23,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     ports:
-      - "5544:80" # Host port : container port
+      - "5545:80" # Host port : container port
     restart: always
 
 networks:
