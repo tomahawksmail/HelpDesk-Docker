@@ -1,8 +1,8 @@
 
 #docker network create --driver overlay helpdesk-network
-docker image build -t helpdesk:3.5.1 .
-docker tag helpdesk:3.5.1 dregistrygui.uskoinc.com/helpdesk:3.5.1
-docker push dregistrygui.uskoinc.com/helpdesk:3.5.1
+docker image build -t helpdesk:3.5.2 .
+docker tag helpdesk:3.5.2 dregistrygui.uskoinc.com/helpdesk:3.5.2
+docker push dregistrygui.uskoinc.com/helpdesk:3.5.2
 
 #docker service create --name helpdesk-service\
 #                      --with-registry-auth\
