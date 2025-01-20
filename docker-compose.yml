@@ -3,6 +3,7 @@ version: "3.8"
 services:
   hesk:
     image: dregistrygui.uskoinc.com/helpdesk:3.5.2
+    user: "1000:1000"
     deploy:
       replicas: 4
 #      placement:
